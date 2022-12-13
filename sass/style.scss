@@ -1,0 +1,211 @@
+@import "fuentes";
+@import "color";
+@import "general";
+@import "titulo";
+
+.cabeza{
+    width:100% ;
+    background-color:#CC5476;
+    margin-bottom: 0.5em;
+    grid-area: header;
+}
+
+.principal{
+    min-width: 300px;
+    margin-top: 0.5em;
+    grid-area: principal;
+}
+
+img{
+    width: 95%;
+    justify-content: center;
+    border-radius: 1.5rem;
+}
+
+.grilla{
+    height: 100vh;
+    margin:0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "header"
+    "principal"
+    "footer";
+    gap: 0.5em;
+}
+
+.contenedor{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+}
+
+.fila{
+
+    padding: 1.5rem;
+    box-shadow: 2px 2px 30px black;
+    background-color: $colorCrema;
+}
+
+.btg{
+    background-color: $colorFucsia;
+    color: $colorCrema;
+}
+
+.bgc{
+    background-color:$colorCrema;
+}
+
+@import "footerSm";
+
+@media (min-width: 500px){
+    
+    @mixin filas($align-items, $align-content, $justify-content){
+        align-items: $align-items;
+        align-content: $align-content;
+        justify-content: $justify-content;
+    }
+
+    .grilla{
+        height: 100vh;
+        margin:0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "header header"
+        "principal principal"
+        "footer footer";
+        gap: 0.5em;
+    }
+
+    .filaUno{
+        grid-area: filaUno;
+    }
+
+    .filaDos{
+        grid-area: filaDos;
+    }
+
+    .figureUno{
+        display: flex;
+        flex-direction: row;
+        @include filas(stretch, center, space-between);
+        
+    }
+
+    .figureDos{
+        display: flex;
+        flex-direction: row-reverse;
+        @include filas(stretch, center, space-between);
+        
+    }
+
+    .figureTres{
+        display: flex;
+        flex-direction: row;
+        @include filas(stretch, center, space-between);
+        
+    }
+
+    .filaTres{
+        grid-area: filaTres;
+    }
+    .fila{
+        padding: 1.5em 1em 1.5em 1em;
+        box-shadow: 3px 3px 50px black;
+        background-color: $colorCrema;
+    }
+
+    .contenedor{
+        margin-top: 3em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+        "filaUno filaUno"
+        "filaDos filaDos"
+        "filaTres filaTres";
+        gap: 1.5em;
+    }
+    
+    img{
+        width: 50%;
+        justify-content: center;
+        border-radius: 1.5rem;
+    }
+
+    .estatica{
+        display: none;
+    }
+
+    .acercar{
+        overflow: hidden;
+    }
+
+    .acercar img{
+        transition: all 2s;
+    }
+
+    .acercar:hover img{
+        transform: scale(1.3);
+    }
+
+    @import "footerMd";
+
+}
+
+@media (min-width: 760px){
+    .grilla{
+        height: 100vh;
+        margin:0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+        "header header header"
+        "principal principal principal"
+        "footer footer footer";
+        gap: 0.5em;
+    }
+    .fila{
+        padding: 1.5em;
+        width: 90% ;
+        box-shadow: 3px 3px 50px black;
+        background-color: $colorCrema;
+    }
+
+    .contenedor{
+        margin-top: 3em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+        "filaUno filaUno filaUno"
+        "filaDos filaDos filaDos"
+        "filaTres filaTres filaTres";
+        gap: 1.5em;
+    }
+    .figureUno, .figureDos, .figureTres{
+        display: flex;
+        flex-direction: row;
+        align-content: stretch;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+
+    .encabezado{
+        display: none;
+    }
+    .fila a{
+        transition-property: all;
+        transition-duration: 300ms;
+    }
+    .fila a:hover{
+        transform: scale(1.5);
+    }
+
+    @import "footerLr";
+
+}

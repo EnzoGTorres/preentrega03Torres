@@ -1,0 +1,55 @@
+
+footer{
+    @extend .btg;
+    padding: 1.5em;
+    grid-area: footer;
+    align-items: center;
+}
+.pie_pagina {
+    .parte-1{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 30px;  
+    padding: 35px 0px;
+        .box figure{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img{
+                width: 20%;
+            }
+        }
+        .box h2{
+            margin-bottom: 25px;
+            font-size: 20px;
+        }
+        .box p{
+            color: $colorCrema;
+            margin-bottom: 10px;
+        }  
+        .red-social a{
+            display: inline-block;
+            text-decoration: none;
+            color: #efefef;
+            width: 48px;
+            height: 48px;
+            line-height: 48px;
+            margin-right: 10px;
+            background-color: #caa3ae;
+            text-align: center;
+            transition: all 100ms ease;
+        }
+        .red-social a:hover{
+            color: #571d2d;
+        }
+    }
+    .parte-2{
+        background-color: #571d2d;
+        padding: 15px 50px;
+        margin: 0 50px 0 50px;
+        text-align: center;
+    }
+}

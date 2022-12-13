@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.bck{
+    background-color: $colorFucsia;
+}
+
+body{
+    background-color: $colorCeleste;
+    color: $colorFucsia;
+    text-align: center;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1{
+    font-family: $fuenteUno ;
+    color:$colorAzul;
+}
+
+.encabezado{
+    margin-top: 20px;
+    color:$colorAzul;
+}
+
+p{
+    margin-top: 20px;
+}
